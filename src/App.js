@@ -1,8 +1,11 @@
 import NavBar from "./components/NavBar";
 import Waitlist from "./components/Waitlist";
 import Graphic from "./components/Graphic.js";
+import { useState } from 'react'
 
 function App() {
+  
+  
   return (
     <div className="App">
       <div className ="block1">
