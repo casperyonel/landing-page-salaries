@@ -1,5 +1,5 @@
 require('dotenv').config()
-const { CONNECTION_STRING } = process.env || 3000
+const { CONNECTION_STRING } = process.env || 4000
 const Sequelize = require('sequelize')
 
 const sequelize = new Sequelize(CONNECTION_STRING, {

@@ -20,19 +20,20 @@ const Button = () => {
         axios.post('/waitlist', { email })
         .then(res => console.log(res))
         .catch(err => console.log(err))
+    
     }
     
-
-
     return (
         <form >
             <label>
                 Email: 
-                 <input placeholder="email" type="text" onChange={e => setEmail(e.target.value)}/>
+                 <input placeholder="email" type="text" onfocus="this.value=''" onChange={e => setEmail(e.target.value)}/>
             </label>
             <button onClick={submit} type="submit" className='btn'>Join the Waitlist</button>
         </form>
     )
 }
+
+// both enter and click button works, why?
     
 export default Button
