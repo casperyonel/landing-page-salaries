@@ -1,5 +1,5 @@
 require('dotenv').config()
-const { CONNECTION_STRING } = process.env || 4444
+const { CONNECTION_STRING } = process.env || 3000
 const Sequelize = require('sequelize')
 
 const sequelize = new Sequelize(CONNECTION_STRING, {
@@ -18,7 +18,7 @@ module.exports = {
     INSERT INTO waitlist (email)
     VALUES ('${email}');
     `).then(() => {
-        res.sendStatus(200)
+        res.status(200).send(`${email}`)
     }).catch(err => console.log(err))
     }
 }
