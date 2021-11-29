@@ -9,7 +9,8 @@ body {
 .block2 {
   display: flex;
   align-items: center;
-  background-color: yellow;
+  background-color: white;
+  height: 600px;
 }
 
 .NavBar {
@@ -19,8 +20,8 @@ body {
 }
 
 #logo {
-  width: 100px;
-  height: 100px;
+  width: 80px;
+  height: 80px;
 }
 
 .waitlist-container {
@@ -37,5 +38,97 @@ body {
   flex-direction: column;
   /* align-items: center; */
   justify-content: space-around;
-  margin: 10px 10px;
+  /* margin: 10px 10px; */
+}
+
+.wrapper {
+  display: inline-flex;
+  /* width: 30vw; */
+  width: 580px;
+  /* height: 12vh; */
+  height: 120px;
+}
+
+.wrapper .static-txt {
+  color: grey;
+  font-size: 39px;
+  font-weight: 300;
+}
+
+.static-txt {
+  width: 550px;
+  margin-top: 14px;
+  /* width: 29.7vw; */
+}
+
+.wrapper .dynamic-txts {
+  position: relative;
+  margin-left: 0px;
+  /* width: 13vw; */
+  width: 258px;
+  line-height: 45px;
+  margin-top: 59px;
+  overflow: hidden;
+} 
+
+.dynamic-txts {
+  margin-left: 0px;
+  width: 10vw;
+  padding: 0px;
+}
+
+.dynamic-txts li {
+  position: relative;
+  top: 0;
+  /* these above two are for slide */
+  color: grey;
+  list-style: none;
+  font-size: 39px;
+  font-weight: 300;
+  animation: slide 10.5s steps(3) infinite;
+  /* steps are number of words, change to 6, since 6 / 2 with 3 words  */
+}
+
+@keyframes slide {
+  100% {
+    top: -135px;
+      /* this is 2nd one copy and pasted with animation line above */
+  }
+}
+
+.dynamic-txts li span {
+  position: relative;
+  top: 0px;
+}
+
+
+.dynamic-txts li span::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background: white;
+  /* this should be same color as background of website */
+  border-left: 2px solid grey;
+  /* this is the ticker cursor color */
+  animation: 
+    typing 3.5s steps(7) infinite,
+    blink-caret .75s step-end infinite;
+  /* steps should be how many letters in longest word */
+}
+
+@keyframes typing {
+  20%, 80% {
+    left: calc(100% + 4px);
+  }
+  100%{
+    left: 90;
+  }
+}
+
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: grey; }
 }
